@@ -2,7 +2,7 @@ import expressAsyncHandler from "express-async-handler"
 import User from "../models/userModel.js";
 import generateToken from "../config/generateToken.js";
 
-
+//api/user
 const registerUser = expressAsyncHandler(async (req, res) => {
     const { name, email, password, pic } = req.body;
     if (!name || !email || !password) {
@@ -34,6 +34,7 @@ const registerUser = expressAsyncHandler(async (req, res) => {
     }
 });
 
+//api/user/login
 const authUser = expressAsyncHandler(async (req, res) => {
     const { email, password } = req.body;
 
@@ -53,4 +54,18 @@ const authUser = expressAsyncHandler(async (req, res) => {
     }
 });
 
-export { registerUser, authUser };
+//api/user?search=harry
+const allUsers = expressAsyncHandler(async (req, res) => {
+    const keyword = req.query.search
+        ? {
+            $or: [
+                { name: { $regex: req.query.search, $options: "i" } },
+                { email: { $regex: req.query.search, $options: "i" } },
+            ],
+        }
+        : {};
+    const users = await User.find(keyword).find({ _id: { $ne: req.user._id } });
+    res.send(users);
+});
+
+export { registerUser, authUser, allUsers };
