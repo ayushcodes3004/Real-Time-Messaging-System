@@ -11,6 +11,7 @@ import ProfileModal from './ProfileModal.jsx';
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import ChatLoading from '../ChatLoading.jsx';
+import UserListItem from '../UserAvatar/UserListItem.jsx';
 
 const SideDrawer = () => {
     const [search, setSearch] = React.useState("");
@@ -168,36 +169,15 @@ const SideDrawer = () => {
                                 {loading ? (
                                     <ChatLoading />
                                 ) : (
-                                    searchResult?.map((u) => (
-                                        <Box
-                                            key={u._id}
-                                            onClick={() => accessChat(u._id)}
-                                            cursor="pointer"
-                                            bg="#E8E8E8"
-                                            _hover={{ background: "#38B2AC", color: "white" }}
-                                            w="100%"
-                                            display="flex"
-                                            alignItems="center"
-                                            color="black"
-                                            px={3}
-                                            py={2}
-                                            mb={2}
-                                            borderRadius="lg"
-                                        >
-                                            <Avatar.Root size="sm" mr={2}>
-                                                <Avatar.Fallback name={u.name} />
-                                                <Avatar.Image src={u.pic} />
-                                            </Avatar.Root>
-                                            <Box>
-                                                <Text>{u.name}</Text>
-                                                <Text fontSize="xs">
-                                                    <b>Email: </b>{u.email}
-                                                </Text>
-                                            </Box>
-                                        </Box>
+                                    searchResult?.map((user) => (
+                                        <UserListItem
+                                            key={user._id}
+                                            user={user}
+                                            handleFunction={() => accessChat(user._id)}
+                                        />
                                     ))
                                 )}
-                                {loadingChat && <ChatLoading />}
+                                {loadingChat && <Spinner ml="auto" display="flex" />}
                             </Drawer.Body>
                             <Drawer.CloseTrigger asChild>
                                 <CloseButton size="sm" />
