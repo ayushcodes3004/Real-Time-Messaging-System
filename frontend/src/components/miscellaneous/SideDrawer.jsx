@@ -83,6 +83,8 @@ const SideDrawer = () => {
             if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
             setSelectedChat(data);
             setLoadingChat(false);
+            setSearch("");
+            setSearchResult([]);
             setIsDrawerOpen(false);
         } catch (error) {
             toaster.create({

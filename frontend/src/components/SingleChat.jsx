@@ -4,6 +4,7 @@ import { Box, Text, IconButton } from '@chakra-ui/react'
 import { LuArrowLeft } from 'react-icons/lu'
 import ProfileModal from './miscellaneous/ProfileModal'
 import { getSender, getSenderFull } from '../config/ChatLogics'
+import UpdateGroupChatModal from './miscellaneous/UpdateGroupModal'
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
     const { user, selectedChat, setSelectedChat } = ChatState();
@@ -12,7 +13,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         <>
             {selectedChat ? (
                 <>
-                    <Box
+                    <Text
                         fontSize={{ base: "28px", md: "30px" }}
                         pb={3}
                         px={2}
@@ -39,8 +40,25 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                         ) : (
                             <>
                                 {selectedChat.chatName.toUpperCase()}
+                                <UpdateGroupChatModal
+                                    fetchAgain={fetchAgain}
+                                    setFetchAgain={setFetchAgain}
+                                />
                             </>
                         )}
+                    </Text>
+                    <Box
+                        d="flex"
+                        flexDir="column"
+                        justifyContent="flex-end"
+                        p={3}
+                        bg="#E8E8E8"
+                        w="100%"
+                        h="100%"
+                        borderRadius="lg"
+                        overflowY="hidden"
+                    >
+                        {/* Messages */}
                     </Box>
                 </>
             ) : (
