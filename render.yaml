@@ -3,7 +3,7 @@ services:
   - type: web
     name: chat-app
     env: node
-    buildCommand: npm install && cd frontend && npm install && npm run build
+    buildCommand: npm install && cd frontend && npm install && npm run build && cd ..
     startCommand: npm start
     envVars:
       - key: NODE_ENV
@@ -16,4 +16,4 @@ services:
         sync: false  # Set this in the Render dashboard
       - key: RENDER_EXTERNAL_URL
         sync: false  # Automatically set by Render (your app's external URL)
-    autoDeploy: false  # Set to true after initial setup
+    autoDeploy: true  # Auto-deploy on push to main

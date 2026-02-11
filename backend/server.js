@@ -39,17 +39,18 @@ app.use("/api/message", messageRoutes);
 const __dirname = path.resolve();
 if (process.env.NODE_ENV === "production") {
     // Serve frontend files from the correct path in production
-    app.use(express.static(path.join(__dirname, "../frontend/dist")));
-    
+    const distPath = path.join(process.cwd(), "frontend", "dist");
+    app.use(express.static(distPath));
+
     app.get(/\/(?!api|socket.io).*$/, (req, res) => {
         // This regex matches any route that doesn't start with /api or /socket.io
-        res.sendFile(path.resolve(__dirname, "../frontend", "dist", "index.html"));
+        res.sendFile(path.join(distPath, "index.html"));
     });
 } else {
     app.get("/", (req, res) => {
         res.send("API is running...");
     });
-    
+
     // In development, don't register catch-all route for frontend files
     // since they don't exist until built
 }
