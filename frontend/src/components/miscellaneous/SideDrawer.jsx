@@ -20,14 +20,14 @@ const SideDrawer = () => {
     const [loadingChat, setLoadingChat] = React.useState(false);
     const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
     const [isProfileOpen, setIsProfileOpen] = React.useState(false);
-    const { user, chats, setChats, setSelectedChat, notification, setNotification } = ChatState();
+    const { user, chats, setChats, setSelectedChat, notification, setNotification, logout } = ChatState();
     const history = useHistory();
 
     const getSender = (loggedUser, users) => {
         return users[0]._id === loggedUser._id ? users[1].name : users[0].name;
     };
     const logoutHandler = () => {
-        localStorage.removeItem("userInfo");
+        logout();
         history.push("/");
     }
 

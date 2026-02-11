@@ -38,6 +38,8 @@ const Login = () => {
                 config
             );
             localStorage.setItem("userInfo", JSON.stringify(data));
+            // Dispatch a custom event to notify the ChatProvider of login
+            window.dispatchEvent(new Event('userLogin'));
             setLoading(false);
             toaster.create({
                 title: "Login Successful",

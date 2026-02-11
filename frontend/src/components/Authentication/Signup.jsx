@@ -102,6 +102,8 @@ const Signup = () => {
                 closable: true,
             });
             localStorage.setItem("userInfo", JSON.stringify(data));
+            // Dispatch a custom event to notify the ChatProvider of login
+            window.dispatchEvent(new Event('userLogin'));
             setLoading(false);
             // navigate to chat or home
             history.push("/chats");
