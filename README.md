@@ -9,23 +9,23 @@ Deployed link:- [https://chatterbox-4r53.onrender.com/]
 
 #### JWT Authentication
 
-![Login Screenshot](docs/images/login.png)
+![Login Screenshot](/docs/images/login.png)
 
 #### Homepage
 
-![Homepage Screenshot](docs/images/homepage.png)
+![Homepage Screenshot](/docs/images/homepage.png)
 
 #### Search
 
-![Search Screenshot](docs/images/search.png)
+![Search Screenshot](/docs/images/search.png)
 
 #### Group Chatting
 
-![Chat Screenshot](docs/images/group.png)
+![Chat Screenshot](/docs/images/group.png)
 
 #### Profile
 
-![Profile Screenshot](docs/images/profile.png)
+![Profile Screenshot](/docs/images/profile.png)
 
 
 
