@@ -2,6 +2,33 @@
 
 A real-time chat application built with React, Node.js, Express, MongoDB, and Socket.io.
 
+## Try it out
+Deployed link:- [https://chatterbox-4r53.onrender.com/]
+
+### 📸 Screenshots
+
+#### JWT Authentication
+
+![Login Screenshot](docs/images/login.png)
+
+#### Homepage
+
+![Homepage Screenshot](docs/images/homepage-demo.png)
+
+#### Search
+
+![Homepage Screenshot](docs/images/homepage-demo.png)
+
+#### Single Chatting
+
+![Chat Screenshot](docs/images/chat-demo.png)
+
+#### Group Chatting
+
+![Chat Screenshot](docs/images/chat-demo.png)
+
+
+
 ## Features
 
 - Real-time messaging
