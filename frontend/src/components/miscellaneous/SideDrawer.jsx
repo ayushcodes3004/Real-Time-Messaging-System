@@ -111,7 +111,7 @@ const SideDrawer = () => {
                         <Text display={{ base: "none", md: "flex" }} px={4}>Search User</Text>
                     </Button>
                 </Tooltip>
-                <Text fontSize="2xl" fontFamily="Work sans">Chat App</Text>
+                <Text fontSize="2xl" fontFamily="Work sans">ChatterBox</Text>
                 <div>
                     <Box position="relative" display="inline-block">
                         <Menu.Root>

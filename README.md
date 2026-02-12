@@ -13,19 +13,19 @@ Deployed link:- [https://chatterbox-4r53.onrender.com/]
 
 #### Homepage
 
-![Homepage Screenshot](docs/images/homepage-demo.png)
+![Homepage Screenshot](docs/images/homepage.png)
 
 #### Search
 
-![Homepage Screenshot](docs/images/homepage-demo.png)
-
-#### Single Chatting
-
-![Chat Screenshot](docs/images/chat-demo.png)
+![Search Screenshot](docs/images/search.png)
 
 #### Group Chatting
 
-![Chat Screenshot](docs/images/chat-demo.png)
+![Chat Screenshot](docs/images/group.png)
+
+#### Profile
+
+![Profile Screenshot](docs/images/profile.png)
 
 
 
